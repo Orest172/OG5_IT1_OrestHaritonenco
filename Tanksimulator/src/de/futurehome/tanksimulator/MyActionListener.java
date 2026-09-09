@@ -2,6 +2,8 @@ package de.futurehome.tanksimulator;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JProgressBar;
+
 public class MyActionListener implements ActionListener {
 	public TankSimulator f;
 
@@ -20,6 +22,7 @@ public class MyActionListener implements ActionListener {
 			 f.myTank.setFuellstand(fuellstand);
 
 			 f.lblFuellstand.setText(""+fuellstand);
+			 f.progressBar.setValue((int)fuellstand);
 		}
 		
 		if (obj == f.btnVerbrauchen) {
@@ -28,15 +31,18 @@ public class MyActionListener implements ActionListener {
 			f.myTank.setFuellstand(fuellstand);
 			
 			f.lblFuellstand.setText(""+fuellstand);
+			f.progressBar.setValue((int)fuellstand);
+			
 		}
 		
 		if (obj == f.btnZuruecksetzen) {
 			double fuellstand = f.myTank.getFuellstand();
-			fuellstand = 0;
-			f.myTank.setFuellstand(fuellstand);
-			
-			f.lblFuellstand.setText(""+fuellstand);
+			f.myTank.setFuellstand(0);
+			f.lblFuellstand.setText("0");
+			f.progressBar.setValue(0);
 		}
-
+			
+			
 	}
+
 }
