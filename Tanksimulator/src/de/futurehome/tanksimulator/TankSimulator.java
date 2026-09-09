@@ -1,4 +1,5 @@
 package de.futurehome.tanksimulator;
+
 import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.FlowLayout;
@@ -7,24 +8,32 @@ import java.awt.Frame;
 import java.awt.GridLayout;
 import java.awt.Label;
 import java.awt.Panel;
+import java.text.SimpleDateFormat;
+
 import javax.swing.JProgressBar;
 import javax.swing.JSlider;
 
+import java.util.Date;
+import java.util.logging.Formatter;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
+
 @SuppressWarnings("serial")
 public class TankSimulator extends Frame {
-	
+
 	public Tank myTank;
-	
+
 	private Label lblUeberschrift = new Label("Tank-Simulator");
-	public  Label lblFuellstand = new Label("     ");
-	
+	public Label lblFuellstand = new Label("     ");
+
 	public Button btnBeenden = new Button("Beenden");
 	public Button btnEinfuellen = new Button("Einfüllen");
 	public Button btnVerbrauchen = new Button("Verbrauchen");
 	public Button btnZuruecksetzen = new Button("Zurücksetzen");
-	
+
 	private Panel northContainer = new Panel(new GridLayout(2, 1));
-	
+
 	private Panel pnlNorth = new Panel();
 	private Panel pnlSubNorth = new Panel();
 	private Panel pnlSubSubNorth = new Panel();
@@ -32,21 +41,21 @@ public class TankSimulator extends Frame {
 	private Panel pnlSouth = new Panel(new GridLayout(1, 0));
 
 	private MyActionListener myActionListener = new MyActionListener(this);
-	
+
 	public JProgressBar progressBar = new JProgressBar(0, 200);
 	public JSlider slider = new JSlider(1, 4);
-	
-	
+
+	protected final Logger log = Logger.getLogger(TankSimulator.class.getName());
 
 	public TankSimulator() {
 		super("Tank-Simulator");
-		
+
 		myTank = new Tank(0);
-		
+
 		this.northContainer.add(pnlNorth);
 		this.northContainer.add(pnlSubNorth);
 		this.northContainer.add(pnlSubSubNorth);
-		
+
 		this.lblUeberschrift.setFont(new Font("", Font.BOLD, 16));
 		this.pnlNorth.add(this.lblUeberschrift);
 		this.pnlSubNorth.add(progressBar);
@@ -62,7 +71,7 @@ public class TankSimulator extends Frame {
 		this.progressBar.setStringPainted(true);
 		this.pack();
 		this.setVisible(true);
-		
+
 		// Ereignissteuerung
 		this.btnEinfuellen.addActionListener(myActionListener);
 		this.btnVerbrauchen.addActionListener(myActionListener);
@@ -71,6 +80,21 @@ public class TankSimulator extends Frame {
 	}
 
 	public static void main(String argv[]) {
+
+		Logger root = Logger.getLogger("");
+		for (Handler h : root.getHandlers()) {
+			h.setFormatter(new Formatter() {
+
+				private final SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy HH:mm:ss");
+
+				@Override
+				public String format(LogRecord r) {
+					String time = sdf.format(new Date(r.getMillis()));
+					return time + " " + r.getLevel() + ": " + r.getMessage() + "\n";
+				}
+			});
+		}
+
 		new TankSimulator();
 	}
 }
