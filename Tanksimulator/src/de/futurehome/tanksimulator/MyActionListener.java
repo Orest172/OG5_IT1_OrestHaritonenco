@@ -25,7 +25,7 @@ public class MyActionListener implements ActionListener {
 		
 		if (obj == f.btnVerbrauchen) {
 			double fuellstand = f.myTank.getFuellstand();
-			fuellstand = fuellstand - 2;
+			fuellstand = fuellstand - f.slider.getValue();
 			f.myTank.setFuellstand(fuellstand);
 			
 			f.lblFuellstand.setText(""+fuellstand);

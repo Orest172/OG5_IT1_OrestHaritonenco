@@ -8,6 +8,7 @@ import java.awt.GridLayout;
 import java.awt.Label;
 import java.awt.Panel;
 import javax.swing.JProgressBar;
+import javax.swing.JSlider;
 
 @SuppressWarnings("serial")
 public class TankSimulator extends Frame {
@@ -26,13 +27,14 @@ public class TankSimulator extends Frame {
 	
 	private Panel pnlNorth = new Panel();
 	private Panel pnlSubNorth = new Panel();
+	private Panel pnlSubSubNorth = new Panel();
 	private Panel pnlCenter = new Panel(new FlowLayout());
 	private Panel pnlSouth = new Panel(new GridLayout(1, 0));
 
 	private MyActionListener myActionListener = new MyActionListener(this);
 	
 	public JProgressBar progressBar = new JProgressBar(0, 200);
-	
+	public JSlider slider = new JSlider(1, 4);
 	
 	
 
@@ -43,10 +45,12 @@ public class TankSimulator extends Frame {
 		
 		this.northContainer.add(pnlNorth);
 		this.northContainer.add(pnlSubNorth);
+		this.northContainer.add(pnlSubSubNorth);
 		
 		this.lblUeberschrift.setFont(new Font("", Font.BOLD, 16));
 		this.pnlNorth.add(this.lblUeberschrift);
 		this.pnlSubNorth.add(progressBar);
+		this.pnlSubSubNorth.add(slider);
 		this.pnlCenter.add(this.lblFuellstand);
 		this.pnlSouth.add(this.btnEinfuellen);
 		this.pnlSouth.add(this.btnVerbrauchen);
