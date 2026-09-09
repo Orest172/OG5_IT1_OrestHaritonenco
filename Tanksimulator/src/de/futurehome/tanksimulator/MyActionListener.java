@@ -2,8 +2,6 @@ package de.futurehome.tanksimulator;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JProgressBar;
-
 public class MyActionListener implements ActionListener {
 	public TankSimulator f;
 

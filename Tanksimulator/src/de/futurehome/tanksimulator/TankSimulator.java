@@ -34,6 +34,7 @@ public class TankSimulator extends Frame {
 	public JProgressBar progressBar = new JProgressBar(0, 200);
 	
 	
+	
 
 	public TankSimulator() {
 		super("Tank-Simulator");
@@ -46,7 +47,6 @@ public class TankSimulator extends Frame {
 		this.lblUeberschrift.setFont(new Font("", Font.BOLD, 16));
 		this.pnlNorth.add(this.lblUeberschrift);
 		this.pnlSubNorth.add(progressBar);
-		this.validate();
 		this.pnlCenter.add(this.lblFuellstand);
 		this.pnlSouth.add(this.btnEinfuellen);
 		this.pnlSouth.add(this.btnVerbrauchen);
@@ -55,6 +55,7 @@ public class TankSimulator extends Frame {
 		this.add(this.northContainer, BorderLayout.NORTH);
 		this.add(this.pnlCenter, BorderLayout.CENTER);
 		this.add(this.pnlSouth, BorderLayout.SOUTH);
+		this.progressBar.setStringPainted(true);
 		this.pack();
 		this.setVisible(true);
 		
