@@ -35,7 +35,7 @@ public class MyActionListener implements ActionListener {
 			f.lblFuellstand.setText(""+fuellstand);
 			f.progressBar.setValue((int)fuellstand);
 			
-			f.log.info(f.progressBar.getValue() + " Liter wurden verbraucht.");
+			f.log.info(f.slider.getValue() + " Liter wurden verbraucht.");
 			
 		}
 		
