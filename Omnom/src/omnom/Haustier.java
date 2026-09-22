@@ -100,7 +100,7 @@ public class Haustier {
 
 	public void heilen() {
 		if (this.gesund < 100) {
-			setGesund(this.gesund + 40);
+			setGesund(100);
 		}
 	}
 }
