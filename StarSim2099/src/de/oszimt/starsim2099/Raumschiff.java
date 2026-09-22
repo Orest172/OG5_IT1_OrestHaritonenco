@@ -1,33 +1,25 @@
 package de.oszimt.starsim2099;
 
+import de.oszimt.starsim2099.Unterklasse.Typ;
+
 /**
  * Write a description of class Raumschiff here.
  * 
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Raumschiff {
+public class Raumschiff extends Typ{
 
 	// Attribute
 	
-	private String typ;
 	private String antrieb;
 	private int winkel;
 	private int maxKapazitaet;
-	private double posX;
-	private double posY;
 	
 	// Methoden
 
 	public Raumschiff() {
 		
-	}
-	
-	public void setTyp(String t) {
-		this.typ = t;
-	}
-	public String getTyp() {
-		return this.typ;
 	}
 	
 	public void setAntrieb(String a) {
@@ -49,20 +41,6 @@ public class Raumschiff {
 	}
 	public int getMaxLadekapazitaet() {
 		return this.maxKapazitaet;
-	}
-	
-	public void setPosX(double pX) {
-		this.posX = pX;
-	}
-	public double getPosX() {
-		return this.posX;
-	}
-	
-	public void setPosY(double pY) {
-		this.posY = pY;
-	}
-	public double getPosY() {
-		return this.posY;
 	}
 	
 	// Darstellung

@@ -1,32 +1,23 @@
 package de.oszimt.starsim2099;
 
+import de.oszimt.starsim2099.Unterklasse.Name;
+
 /**
  * Write a description of class Pilot here.
  * 
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Pilot {
+public class Pilot extends Name{
 
 	// Attribute
 	
-	private String name;
 	private String grad;
-	private double posX;
-	private double posY;
 	
 	// Methoden
 	
 	public Pilot() {
 		
-	}
-	
-	public void setName(String n) {
-		this.name = n;
-	}
-	
-	public String getName() {
-		return this.name;
 	}
 	
 	public void setGrad(String g) {
@@ -37,19 +28,5 @@ public class Pilot {
 		return this.grad;
 	}
 	
-	public void setPosX(double p) {
-		this.posX = p;
-	}
 	
-	public double getPosX() {
-		return this.posX;
-	}
-	
-	public void setPosY(double p) {
-		this.posY = p;
-	}
-	
-	public double getPosY() {
-		return this.posY;
-	}
 }
