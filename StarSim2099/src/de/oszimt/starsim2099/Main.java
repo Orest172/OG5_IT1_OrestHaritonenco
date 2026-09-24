@@ -38,14 +38,20 @@ public class Main {
 		meineErde.setAnzahlHafen(2);
 		meineErde.setPosX(Math.random() * universumBreite);
 		meineErde.setPosY(Math.random() * universumHoehe);
-		meinGame.addPlanet(meineErde);
+		meinGame.addHimmelskoerper(meineErde);
 
 		Planet meinCentaurus = new Planet();
 		meinCentaurus.setName("Centaurus 7");
 		meinCentaurus.setAnzahlHafen(1);
 		meinCentaurus.setPosX(Math.random() * universumBreite);
 		meinCentaurus.setPosY(Math.random() * universumHoehe);
-		meinGame.addPlanet(meinCentaurus);
+		meinGame.addHimmelskoerper(meinCentaurus);
+		
+		Mond erdMond = new Mond();
+		erdMond.setName("Erd Mond");
+		erdMond.setPosX(Math.random() * universumBreite);
+		erdMond.setPosY(Math.random() * universumBreite);
+		meinGame.addHimmelskoerper(erdMond);
 
 
 		//// Ladungen hinzufügen
