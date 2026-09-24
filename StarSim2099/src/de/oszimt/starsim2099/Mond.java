@@ -1,31 +1,31 @@
 package de.oszimt.starsim2099;
 
-
 /**
  * Write a description of class Planet here.
  * 
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Planet extends Himmelskoerper{
+public class Mond extends Himmelskoerper {
 
 	// Attribute
-	
-	private int anzahlHafen;
-	
+
+	private String erzart;
+
 	// Methoden
 
-	public Planet() {
-		
+	public Mond() {
+
 	}
-	
-	public void setAnzahlHafen(int a) {
-		this.anzahlHafen = a;
+
+	public void setErzart(String erz) {
+		this.erzart = erz;
 	}
-	public int getAnzahlHafen() {
-		return this.anzahlHafen;
+
+	public String getErzart() {
+		return this.erzart;
 	}
-	
+
 	// Darstellung
 	public static char[][] getDarstellung() {
 		char[][] planetShape = { { '\0', '/', '*', '*', '\\', '\0' }, { '|', '*', '*', '*', '*', '|' },
