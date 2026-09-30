@@ -6,11 +6,11 @@ public abstract class Mitglied {
 	// Attribute
 	private String name;
 	private int telefonnummer;
-	private boolean jahresBeitragBezahlt;
+	private double jahresBeitrag;
 	
 	// Konstruktor
 	
-	public Mitglied(String name, int telefonnummer) {
+	public Mitglied(String name, int telefonnummer, double jahresBeitrag) {
 		this.name = name;
 		this.telefonnummer = telefonnummer;
 	}
@@ -33,12 +33,12 @@ public abstract class Mitglied {
 		this.telefonnummer = telefonnummer;
 	}
 
-	public boolean isJahresBeitragBezahlt() {
-		return this.jahresBeitragBezahlt;
+	public double getJahresBeitrag() {
+		return this.jahresBeitrag;
 	}
 
-	public void setJahresBeitragBezahlt(boolean jahresBeitragBezahlt) {
-		this.jahresBeitragBezahlt = jahresBeitragBezahlt;
+	public void setJahresBeitrag(double jahresBeitragBezahlt) {
+		this.jahresBeitrag = jahresBeitragBezahlt;
 	}
 	
 	

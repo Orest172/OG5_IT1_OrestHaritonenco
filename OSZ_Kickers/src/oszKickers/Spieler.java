@@ -9,8 +9,8 @@ public class Spieler extends Mitglied{
 	
 	// Konstruktor
 	
-	public Spieler(String name, int telefonnr, int trikotnr, char position) {
-		super(name, telefonnr);
+	public Spieler(String name, int telefonnr, double jahresBeitrag, int trikotnr, char position) {
+		super(name, telefonnr, jahresBeitrag);
 		this.trikotnummer = trikotnr;
 		this.spielPosition = position;
 	}

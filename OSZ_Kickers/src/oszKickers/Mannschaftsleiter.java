@@ -7,8 +7,8 @@ public class Mannschaftsleiter extends Spieler {
 	private String nameMannschaft;
 	private double anzahlEngagement;
 
-	public Mannschaftsleiter(String name, int telefonnr, int trikotnr, char position, String mannschaftsName) {
-		super(name, telefonnr, trikotnr, position);
+	public Mannschaftsleiter(String name, int telefonnr,double jahresBeitrag, int trikotnr, char position, String mannschaftsName) {
+		super(name, telefonnr, jahresBeitrag, trikotnr, position);
 		this.nameMannschaft = mannschaftsName;
 	}
 
