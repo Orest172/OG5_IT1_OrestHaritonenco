@@ -2,6 +2,8 @@ package primzahl;
 
 public class PrimzahlAlgorithmus {
 
+	public PrimzahlAlgorithmus() {}
+	
 	public boolean isPrim(long zahl) {
 		for (int i = 2; i <= 10; i++) {
 			if (zahl % i == 0) {
