@@ -1,3 +1,4 @@
+package primzahl;
 
 public class PrimzahlAlgorithmus {
 
