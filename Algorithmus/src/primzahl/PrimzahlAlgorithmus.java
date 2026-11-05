@@ -25,6 +25,6 @@ public class PrimzahlAlgorithmus {
 
         System.out.println(timer.stop());
 
-        return prim;
-    }
+		return prim;
+	}
 }
