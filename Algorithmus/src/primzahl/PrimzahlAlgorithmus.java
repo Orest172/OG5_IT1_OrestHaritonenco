@@ -2,17 +2,29 @@ package primzahl;
 
 public class PrimzahlAlgorithmus {
 
-	public PrimzahlAlgorithmus() {}
-	
-	public boolean isPrim(long zahl) {
-		for (int i = 2; i <= 10; i++) {
-			if (zahl % i == 0) {
-				return false;
-			} else {
-				return true;
-			}
-		}
-		return false;
-	}
+    private Timer timer = new Timer();
 
+    public PrimzahlAlgorithmus() {}
+
+    public boolean isPrim(long zahl) {
+
+        timer.start();
+
+        boolean prim = true;
+
+        if (zahl < 2) {
+            prim = false;
+        } else {
+            for (long i = 2; i <= zahl / i; i++) {
+                if (zahl % i == 0) {
+                    prim = false;
+                    break;
+                }
+            }
+        }
+
+        System.out.println(timer.stop());
+
+        return prim;
+    }
 }
