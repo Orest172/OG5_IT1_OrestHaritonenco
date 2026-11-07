@@ -10,55 +10,74 @@ public class Primzahltest {
     public static void main(String[] args) {
 
         Primzahltest test = new Primzahltest();
-
         test.exportMessungen();
     }
 
     public void exportMessungen() {
 
-    	long[] zahlen = {
 
-    		    
-    		    97L, 100L, 997L, 999L, 1000L,
+long[] zahlen = {
 
-    		   
-    		    9973L, 9999L, 10000L, 10007L, 10009L,
+    // Kleine Zahlen
+    97L,
+    997L,
+    9973L,
+    99991L,
+    999983L,
 
-    		    
-    		    99991L, 99999L, 100000L, 100003L, 100019L,
+    // Millionen
+    1000003L,
+    1000033L,
+    10000019L,
+    10000079L,
+    99999989L,
 
-    		    
-    		    999983L, 999999L, 1000000L, 1000003L, 1000033L,
+    // Milliarden
+    1000000007L,
+    1000000009L,
+    1000000021L,
+    1000000033L,
+    1000000087L,
 
-    		    
-    		    9999991L, 9999999L, 10000000L, 10000019L, 10000079L,
+    // Billionen
+    1000000000039L,
+    1000000000061L,
+    1000000000063L,
+    1000000000091L,
+    1000000000093L,
 
-    		    
-    		    99999989L, 99999999L, 100000000L, 100000007L, 100000037L,
+    // Billiarden
+    1000000000000037L,
+    1000000000000061L,
+    1000000000000063L,
+    1000000000000091L,
+    1000000000000159L,
 
-    		    
-    		    999999937L, 999999999L, 1000000000L,
-    		    1000000007L, 1000000009L,
+    // Sehr groﬂe Zahlen
+    10000000000000061L,
+    10000000000000069L,
+    10000000000000079L,
+    10000000000000099L,
 
-    		    
-    		    9999999967L, 9999999999L, 10000000000L,
-    		    10000000019L, 10000000033L,
+    // Nahe dem long-Maximum
+    9223372036854775783L,
+    9223372036854775643L,
+    9223372036854775507L,
+    9223372036854775463L,
 
-    		    
-    		    99999999977L, 99999999999L, 100000000000L,
-    		    100000000003L, 100000000019L,
+    // Zusammengesetzte Zahlen
+    1000000000L,
+    10000000000L,
+    1000000000000L,
+    1000000000000000L,
+    9223372036854775807L
+    
+    // Array AI generated :D
+};
 
-    		    
-    		    999999999989L, 999999999999L, 1000000000000L,
-    		    1000000000039L, 1000000000061L,
-
-    		    
-    		    99999999999991L, 99999999999999L,
-    		    100000000000003L, 100000000000031L,
-    		    100000000000037L
-    		};
 
         PrimzahlAlgorithmus algo = new PrimzahlAlgorithmus();
+        Timer timer = new Timer();
 
         try (BufferedWriter writer =
                 new BufferedWriter(new FileWriter("messungen.csv"))) {
@@ -68,19 +87,17 @@ public class Primzahltest {
 
             for (long zahl : zahlen) {
 
-                long start = System.nanoTime();
+                timer.start();
 
                 boolean prim = algo.isPrim(zahl);
 
-                long ende = System.nanoTime();
-
-                long laufzeit = ende - start;
+                long laufzeit = timer.stop();
 
                 writer.write(zahl + ";" + prim + ";" + laufzeit);
                 writer.newLine();
             }
 
-            System.out.println("Excel-Export erfolgreich!");
+            System.out.println("Messungen erfolgreich exportiert!");
 
         } catch (IOException e) {
             e.printStackTrace();
