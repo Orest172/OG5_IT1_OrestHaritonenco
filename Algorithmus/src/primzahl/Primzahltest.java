@@ -1,21 +1,23 @@
 package primzahl;
 
-import java.util.Scanner;
+import java.lang.Thread;
 
 public class Primzahltest {
 
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
-
-        System.out.print("Zahl eingeben: ");
-
-        long primzahl = scan.nextLong();
-
-        PrimzahlAlgorithmus primZahl = new PrimzahlAlgorithmus();
-
-        System.out.println(primZahl.isPrim(primzahl));
-
-        scan.close();
+        long zahl = 1;
+        PrimzahlAlgorithmus prim = new PrimzahlAlgorithmus();
+        
+        
+        while(zahl <= 9223372036854775807L) {
+        	System.out.println(prim.isPrim(zahl));
+        	
+        	try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+        }
     }
 }
