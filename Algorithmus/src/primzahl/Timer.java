@@ -1,3 +1,4 @@
+
 package primzahl;
 
 public class Timer {
@@ -8,13 +9,16 @@ public class Timer {
         timerStart = System.nanoTime();
     }
 
-    public String stop() {
+    public long stop() {
         long endZeit = System.nanoTime();
-        long dauer = endZeit - timerStart;
+        return endZeit - timerStart;
+    }
 
-        long sekunden = dauer / 1000000000;
-        long milliSekunden = (dauer / 1000000) % 1000;
-        long nanoSekunden = dauer % 1000000;
+    public String getFormattedTime(long dauer) {
+
+        long sekunden = dauer / 1_000_000_000;
+        long milliSekunden = (dauer / 1_000_000) % 1000;
+        long nanoSekunden = dauer % 1_000_000;
 
         return "Dauer: " + sekunden + " Sekunden, "
                 + milliSekunden + " Millisekunden und "
