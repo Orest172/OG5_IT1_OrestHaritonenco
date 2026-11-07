@@ -11,8 +11,8 @@ public class Primzahltest {
         
         
         while(zahl <= 9223372036854775807L) {
-        	System.out.println(prim.isPrim(zahl));
-        	
+        	prim.isPrim(zahl);
+        	zahl += 1;
         	try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
