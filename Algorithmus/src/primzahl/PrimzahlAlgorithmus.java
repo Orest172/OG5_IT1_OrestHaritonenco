@@ -22,7 +22,11 @@ public class PrimzahlAlgorithmus {
                 }
             }
         }
-
+        if (prim) {
+        	System.out.println("Die Zahl " + zahl + " ist EINE Primzahl");
+		} else {
+			System.out.println("Die Zahl " + zahl + " ist KEINE Primzahl");
+		}
         System.out.println(timer.stop());
 
 		return prim;
