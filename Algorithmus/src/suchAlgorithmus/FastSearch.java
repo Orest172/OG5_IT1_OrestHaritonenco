@@ -1,9 +1,13 @@
 package suchAlgorithmus;
+import primzahl.Timer;
 
 public class FastSearch {
 
 	public static int fastsearch(int[] liste, int von, int bis, int gesuchteZahl) {
-
+		
+		Timer timer = new Timer();
+		timer.start();
+		
 		if (von <= bis) {
 			int mB = von - (bis - von) / 2;
 			int mI = von + (bis - von) * ((gesuchteZahl - liste[von]) / (liste[bis] - liste[von]));
@@ -26,8 +30,9 @@ public class FastSearch {
 				return fastsearch(liste, mI + 1, bis, gesuchteZahl);
 			}
 		}
-
+		System.out.println(timer.stop());
 		return -1;
+		
 	}
 
 }
