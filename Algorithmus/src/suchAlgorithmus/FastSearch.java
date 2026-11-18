@@ -34,8 +34,8 @@ public class FastSearch {
 				return fastsearch(liste, mI + 1, bis, gesuchteZahl);
 			}
 		}
-
-		System.out.println(timer.stop());
+		
+		System.out.println("Die Zahl: " + gesuchteZahl + " wurde an der " + von + " und hat " + timer.stop() + "Nanosekunden gedauert!");
 		return -1;
 	}
 }
