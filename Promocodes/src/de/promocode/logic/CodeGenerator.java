@@ -15,6 +15,11 @@ public class CodeGenerator {
 		}
 		
 		System.out.println("Letzte Zahl ist " + zahlenliste[zahlenliste.length-1]);
+		
+		for (int i = 0; i < zahlenliste.length; i++) {
+			System.out.println(i + " " + zahlenliste[i]);
+			
+		}
 		return zahlenliste;
 	}
 
