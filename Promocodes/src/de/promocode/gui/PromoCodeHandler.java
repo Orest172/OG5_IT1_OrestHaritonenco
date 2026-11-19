@@ -25,7 +25,7 @@ public class PromoCodeHandler implements ActionListener {
 
 		if (obj == mainWindow.getBtnSuchen()) {
 			long code = mainWindow.getTfdSuche().getNumber();
-			if (CodeSearch.findPromoCode(mainWindow.getListCodes(), code) == CodeSearch.NOT_FOUND) {
+			if (CodeSearch.findPromoCode(mainWindow.getListCodes(), 0, mainWindow.getListCodes().length - 1, code) == CodeSearch.NOT_FOUND) {
 				mainWindow.getLblFeedback().setText("UNGÜLTIG");
 				mainWindow.getLblFeedback().setForeground(new Color(0x990000));
 			} else {
