@@ -12,9 +12,6 @@ public class FastSearch {
 
 		long ergebnis = fastsearchIntern(liste, von, bis, gesuchteZahl);
 
-		System.out.println("Die Zahl: " + gesuchteZahl + " wurde an der Stelle " + ergebnis + " gefunden. Dauer: "
-				+ timer.stop() + " Nanosekunden!");
-
 		return ergebnis;
 	}
 
