@@ -2,7 +2,7 @@ package suchAlgorithmus;
 
 public class LineareSuche {
 
-	public static int lineareSuche(int[] liste, int gesuchteZahl) {
+	public static int lineareSuche(long[] liste, long gesuchteZahl) {
 
 		for (int i = 0; i < liste.length; i++) {
 
